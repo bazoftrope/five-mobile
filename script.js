@@ -319,24 +319,24 @@ function showQuestion() {
 
 function selectAnswer(e) {
     const value = parseInt(e.target.dataset.value);
-    
+
     scaleOptions.forEach(option => {
         option.classList.remove('selected');
     });
-    
+
     e.target.classList.add('selected');
-    
+
     // Store answer
     const question = questions[currentQuestion];
     if (!answers[question.block]) {
         answers[question.block] = 0;
     }
-    answers[question.block] = value;
-    
+    answers[question.block] += value;
+
     // Auto-advance to next question
     setTimeout(() => {
         currentQuestion++;
-        
+
         if (currentQuestion >= questions.length) {
             showResults();
         } else {
