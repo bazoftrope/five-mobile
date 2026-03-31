@@ -292,9 +292,8 @@ function showQuestion() {
     progressFill.style.width = `${progress}%`;
     progressText.textContent = `Вопрос ${currentQuestion + 1} из ${questions.length}`;
 
-    // Update question - show type badge
-    const typeBadge = question.type === 'resource' ? '🟢 Ресурс' : '🔴 Дефицит';
-    questionBlockTitle.textContent = `${elementInfo.icon} ${elementInfo.name} — ${typeBadge}`;
+    // Update question
+    questionBlockTitle.textContent = `${elementInfo.icon} ${elementInfo.name}`;
     questionBlockTitle.className = `block-title ${elementInfo.color}`;
     questionText.textContent = question.text;
 
